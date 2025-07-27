@@ -1,1 +1,16 @@
 @import "tailwindcss";
+@reference "tailwindcss/theme.css";
+
+body {
+  @apply bg-[url('../assets/mainBackGround.jpg')]  bg-repeat relative;
+}
+#overlay {
+  transition: mask-image 0.1s;
+  pointer-events: none;
+}
+
+#overlay {
+  -webkit-mask-image: radial-gradient(circle 100px at center, transparent 0%, black 100%);
+  mask-image: radial-gradient(circle 100px at center, transparent 0%, black 100%);
+  background-color: rgba(0, 0, 0, 0.9);
+}
