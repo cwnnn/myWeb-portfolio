@@ -1,6 +1,7 @@
 <script setup>  
 import { onMounted } from 'vue';
 import Header from './components/RcsHeader/RcsHeader.vue';
+import RcsProficiencyBar from './components/RcsProficiencyBar/RcsProficiencyBar.vue'
 
 onMounted(() => {
   const overlay = document.getElementById('overlay');
@@ -18,7 +19,8 @@ onMounted(() => {
      <Header />
      <div id="overlay" class="fixed inset-0 z-10 bg-black bg-opacity-90 pointer-events-none"></div>
       <main class="relative z-20 text-white p-10">
-       
+        <RcsProficiencyBar skill="Vue.js" :level="80" />
+        <RcsProficiencyBar skill="TailwindCSS" :level="70" />
       </main>
 </template>
 

@@ -1,0 +1,42 @@
+@reference "tailwindcss/theme.css";
+
+.bar-wrapper {
+    @apply w-full mb-4;
+}
+
+.bar {
+    @apply flex justify-between mb-1;
+}
+
+.bar-skill {
+    @aplly text-sm font-medium text-gray-700;
+}
+
+.bar-lvl {
+    @apply text-sm font-medium text-gray-500;
+}
+
+.bar-bg {
+    @apply w-full bg-gray-200 rounded-full h-3 relative;
+}
+
+.bar-front {
+    @apply h-3 rounded-full bg-gradient-to-r from-blue-500/50 to-fuchsia-600 transition-all duration-700 ease-in-out;
+}
+.bar-cycle {
+  @apply absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-fuchsia-500 rounded-full border-2 border-white transition-all duration-300 ease-in-out cursor-pointer;
+}
+
+.bar-cycle:active {
+  @apply w-6 h-6 bg-white border-fuchsia-500;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 25px rgba(217, 70, 239, 0.7);
+  transition: all 0.1s ease-in-out;
+}
+
+.glow-fill {
+  box-shadow: 0 0 10px rgba(217, 70, 239, 0.6), 0 0 20px rgba(217, 70, 239, 0.4);
+}
+
+.glow-dot {
+  box-shadow: 0 0 12px rgba(217, 70, 239, 0.6),0 0 18px rgba(217, 70, 239,0.9),0 0 30px rgba(217, 70, 239,0.9);
+}
