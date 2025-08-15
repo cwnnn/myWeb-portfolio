@@ -1,44 +1,8 @@
-<template>
-  <div class="bar-wrapper">
-    <div class="bar">
-      <span class="bar-skill">{{ skill }}</span>
-      <span class="bar-lvl">{{ level }}%</span>
-    </div>
-
-    <div class="bar-bg glow-bar" ref="barRef">
-      <!-- İç bar: barCycleX ile senkronize -->
-      <div
-        class="bar-front glow-fill"
-        :style="{
-          width: `${barCycleX}%`,
-          transition: isDragging ? 'none' : 'width 0.3s ease-out',
-        }"
-      ></div>
-
-      <!-- Hareket ettirilebilen daire -->
-      <div
-        class="bar-cycle glow-dot"
-        :class="{ active: isActive }"
-        :style="{
-          left: `calc(${barCycleX}% - 8px)`,
-          transition: isDragging ? 'none' : 'left 0.3s ease-out',
-        }"
-        @mousedown="handleMouseDown"
-        @click="toggleActive"
-      ></div>
-    </div>
-  </div>
-</template>
-
-
 <script setup lang="ts">
-import { ref, watch, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import type { ProficiencyBarProps } from './RcsProficiencyBar.interface'
 
-const props = defineProps<{
-  skill: string
-  level: number
-  
-}>()
+const props = defineProps<ProficiencyBarProps>()
 
 const isActive = ref(false)
 const isDragging = ref(false)
@@ -51,64 +15,74 @@ function toggleActive() {
   isActive.value = !isActive.value
 }
 
-// Bar doluluk oranına göre default pozisyonu hesapla
 onMounted(() => {
   defaultLeft.value = props.level
   barCycleX.value = props.level
-  rebound.value= props.level
+  rebound.value = props.level
 })
 
-function handleMouseDown(e: MouseEvent) {
+function handlePointerDown(e: PointerEvent) {
   isDragging.value = true
-  document.addEventListener('mousemove', handleMouseMove)
-  document.addEventListener('mouseup', handleMouseUp)
-}
+  document.addEventListener('pointermove', handlePointerMove)
+  document.addEventListener('pointerup', handlePointerUp, { once: true })
+} 
 
-function handleMouseMove(e: MouseEvent) {
+function handlePointerMove(e: PointerEvent) {
   if (!isDragging.value || !barRef.value) return
-
   const rect = barRef.value.getBoundingClientRect()
   const offsetX = e.clientX - rect.left
   const percentage = (offsetX / rect.width) * 100
-
-  // 0 ile 100 arasında sınırla
   barCycleX.value = Math.min(100, Math.max(0, percentage))
 }
 
-function handleMouseUp() {
+function handlePointerUp() {
   isDragging.value = false
-  const notr = ref(0) //buradaki -1 ya da +1 tanımlayıp sonrasında bunu çarpıp normal değerden çıkarıcam atık bir kat sayıyı(yay efekti için)
 
-  if(defaultLeft.value + 0.4*(defaultLeft.value-barCycleX.value)>100){
-    rebound.value = 100
-  }
-  else if(defaultLeft.value + 0.4*(defaultLeft.value-barCycleX.value)<0){
-    rebound.value = 0
-  }
-  else{
-    rebound.value = defaultLeft.value + 0.4*(defaultLeft.value-barCycleX.value)
-  }
-  
-  
+  const reboundValue = defaultLeft.value + 0.4 * (defaultLeft.value - barCycleX.value)
+  rebound.value = Math.min(100, Math.max(0, reboundValue))
 
   barCycleX.value = rebound.value
 
-  
   setTimeout(() => {
     barCycleX.value = defaultLeft.value
-  }, 300);
+  }, 300)
 
-  
-
-  document.removeEventListener('mousemove', handleMouseMove)
-  document.removeEventListener('mouseup', handleMouseUp)
+  document.removeEventListener('pointermove', handlePointerMove)
 }
 
 onBeforeUnmount(() => {
-  document.removeEventListener('mousemove', handleMouseMove)
-  document.removeEventListener('mouseup', handleMouseUp)
+  document.removeEventListener('pointermove', handlePointerMove)
 })
 </script>
 
+<template>
+  <div class="bar-wrapper">
+    <div class="bar">
+      <span class="bar-skill">{{ props.skill }}</span>
+      <span class="bar-lvl">{{ props.level }}%</span>
+    </div>
+
+    <div class="bar-bg glow-bar" ref="barRef">
+      <div
+        class="bar-front glow-fill"
+        :style="{
+          width: `${barCycleX}%`,
+          transition: isDragging ? 'none' : 'width 0.3s ease-out',
+        }"
+      ></div>
+
+      <div
+        class="bar-cycle glow-dot"
+        :class="{ active: isActive }"
+        :style="{
+          left: `calc(${barCycleX}% - 8px)`,
+          transition: isDragging ? 'none' : 'left 0.3s ease-out',
+        }"
+        @pointerdown="handlePointerDown"
+        @click="toggleActive"
+      ></div>
+    </div>
+  </div>
+</template>
 
 <style scoped src="./RcsProficiencyBar.css"></style>
