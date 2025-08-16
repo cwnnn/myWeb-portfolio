@@ -42,11 +42,26 @@
       />
     </div>
   </section>
+<section class="skills-section mt-16 px-6">
+  <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
+<div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12">
+    <RcsProficiencyBar skill="C#" :level="85" />
+    <RcsProficiencyBar skill="Vue.js" :level="60" />
+    <RcsProficiencyBar skill="Python" :level="60" />
+    <RcsProficiencyBar skill="Git" :level="85" />
+    <RcsProficiencyBar skill="JavaScript" :level="50" />
+    <RcsProficiencyBar skill="Node.js" :level="40" />
+    <RcsProficiencyBar skill="TypeScript" :level="37" />  
+    <RcsProficiencyBar skill="SQL" :level="75" /> 
+    <RcsProficiencyBar skill="PHP" :level="40" />
+    <RcsProficiencyBar skill="Unity" :level="30" />
+</div>
 
-  hom
+</section>
 </template>
 
 <script setup>
+import RcsProficiencyBar from '@/components/RcsProficiencyBar/RcsProficiencyBar.vue';
 </script>
 
 <style scoped>
