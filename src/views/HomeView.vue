@@ -122,7 +122,12 @@ import { projects } from '@/data/projects';
 }
 
 .icon-link{
+  @apply transition duration-300;
 }
 
+.icon-link:hover {
+  @apply text-indigo-400;
+  filter: drop-shadow(0 0 8px #818cf8);
+}
 
 </style>

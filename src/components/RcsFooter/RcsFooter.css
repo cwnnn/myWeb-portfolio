@@ -1,0 +1,38 @@
+@reference "tailwindcss/theme.css";
+
+.footer {
+  @apply bg-black text-white border-t border-gray-500 py-6;
+}
+
+.footer-container {
+  @apply container mx-auto flex flex-col md:flex-row justify-between items-center gap-4;
+}
+
+.footer-info {
+  @apply text-center md:text-left;
+}
+
+.footer-title {
+  @apply font-bold text-lg;
+}
+
+.footer-subtitle {
+  @apply text-sm text-gray-400;
+}
+
+.footer-socials {
+  @apply flex gap-6;
+}
+
+.footer-icon {
+  @apply transition duration-300 ;
+}
+
+.footer-icon:hover {
+  @apply text-fuchsia-500;
+  filter: drop-shadow(0 0 8px #d946ef);
+}
+
+.footer-copy {
+  @apply text-center mt-4 text-gray-400 text-sm;
+}
