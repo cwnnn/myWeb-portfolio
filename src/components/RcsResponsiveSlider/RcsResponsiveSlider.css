@@ -1,0 +1,59 @@
+@reference "tailwindcss/theme.css";
+
+.rcs-slider {
+  @apply w-full flex flex-col items-center;
+}
+
+.rcs-slider--slides {
+  @apply relative w-80 h-96 flex items-center justify-center;
+}
+
+.rcs-slider--card-wrapper {
+  @apply absolute left-0 top-0 w-full h-full flex items-center justify-center transition-all duration-500 ;
+}
+
+.rcs-slider--card {
+  @apply relative rounded-xl shadow-lg w-80 h-60 overflow-hidden flex flex-col justify-end ring-2 ring-indigo-400/70  shadow-fuchsia-500
+}
+
+.rcs-slider--img {
+  @apply w-full h-full object-cover absolute left-0 top-0;
+}
+
+.rcs-slider--info {
+  @apply relative z-10 w-full bg-white/50 px-4 py-2 text-center;
+  backdrop-filter: blur(2px);
+  max-height: 5rem;
+  opacity: 0.85;
+}
+
+.rcs-slider--title {
+  @apply text-xl font-bold truncate;
+}
+
+.rcs-slider--desc {
+  @apply text-gray-600 truncate;
+}
+
+.rcs-slider--meta {
+  @apply text-yellow-500 truncate;
+}
+
+.rcs-slider--controls {
+  @apply flex items-center space-x-4 mt-4 ;
+}
+
+.rcs-slider--arrow {
+  @apply p-3 w-20 rounded-full shadow text-white text-2xl transition-colors duration-300 hover:bg-slate-100 hover:text-black cursor-pointer;
+}
+
+.rcs-slider--dots {
+  @apply flex space-x-3 p-15;
+}
+
+.rcs-slider--dot {
+  @apply w-3 h-3 rounded-full bg-gray-400 transition-colors duration-300 cursor-pointer;
+}
+.rcs-slider--dot-active {
+  @apply bg-indigo-400;
+}
