@@ -1,8 +1,9 @@
 <template>
-  <div class="rcs-spacer "
-  :class="[
-  `vertical-${props.size}`
-  ]"
+  <div
+    class="rcs-spacer"
+    :class="[`vertical-${props.size}`, props.class]"
+    :id="props.id"
+    :style="props.style"
   >
   </div>
 </template>

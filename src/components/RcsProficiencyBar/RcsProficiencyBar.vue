@@ -56,7 +56,12 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="bar-wrapper">
+  <div
+    class="bar-wrapper"
+    :id="props.id"
+    :class="['bar-wrapper', props.class]"
+    :style="props.style"
+  >
     <div class="bar">
       <span class="bar-skill">{{ props.skill }}</span>
       <span class="bar-lvl">{{ props.level }}%</span>
