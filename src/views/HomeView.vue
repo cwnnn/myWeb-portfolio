@@ -44,7 +44,7 @@
   </section>
   <section class="mt-16 px-6">
     <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
-    <RcsResponsiveSlider :items="items" link="./HomeView.vue" />
+    <RcsResponsiveSlider :items="projects" link="./HomeView.vue" />
   </section>
   <RcsSpacer size="44" />
   <section class="skills-section mt-16 px-6">
@@ -70,28 +70,8 @@ import RcsProficiencyBar from '@/components/RcsProficiencyBar/RcsProficiencyBar.
 import RcsResponsiveSlider from "@/components/RcsResponsiveSlider/RcsResponsiveSlider.vue";
 import RcsSpacer from '@/components/RcsSpacer/RcsSpacer.vue';
 
-const items = [
-  { 
-    img: "/assets/projects/1.png", 
-    title: "Toxicity Game", 
-    desc: "A Turkish warrior's battle against zombies."
-  },
-  { 
-    img: "/assets/projects/2.png", 
-    title: "Bus Automation System", 
-    desc: "A system to automate bus operations and improve public transport efficiency."
-  },
-  { 
-    img: "/assets/projects/3.png", 
-    title: "Event Tracking System", 
-    desc: "A system to track and manage events efficiently."
-  },
-  { 
-    img: "/assets/projects/4.png", 
-    title: "myWeb-portfolio", 
-    desc: "A personal portfolio showcasing my projects and skills."
-  }
-] 
+import { projects } from '@/data/projects';
+
 </script>
 
 <style scoped>
