@@ -1,0 +1,41 @@
+@reference "tailwindcss/theme.css";
+
+.rcs-spacer {
+  @apply w-full h-full flex justify-center items-center;
+}
+
+.vertical-0 { @apply h-0; }
+.vertical-0\.5 { @apply h-0.5; }
+.vertical-1 { @apply h-1; }
+.vertical-1\.5 { @apply h-1.5; }
+.vertical-2 { @apply h-2; }
+.vertical-2\.5 { @apply h-2.5; }
+.vertical-3 { @apply h-3; }
+.vertical-3\.5 { @apply h-3.5; }
+.vertical-4 { @apply h-4; }
+.vertical-5 { @apply h-5; }
+.vertical-6 { @apply h-6; }
+.vertical-7 { @apply h-7; }
+.vertical-8 { @apply h-8; }
+.vertical-9 { @apply h-9; }
+.vertical-10 { @apply h-10; }
+.vertical-11 { @apply h-11; }
+.vertical-12 { @apply h-12; }
+.vertical-14 { @apply h-14; }
+.vertical-16 { @apply h-16; }
+.vertical-20 { @apply h-20; }
+.vertical-24 { @apply h-24; }
+.vertical-28 { @apply h-28; }
+.vertical-32 { @apply h-32; }
+.vertical-36 { @apply h-36; }
+.vertical-40 { @apply h-40; }
+.vertical-44 { @apply h-44; }
+.vertical-48 { @apply h-48; }
+.vertical-52 { @apply h-52; }
+.vertical-56 { @apply h-56; }
+.vertical-60 { @apply h-60; }
+.vertical-64 { @apply h-64; }
+.vertical-72 { @apply h-72; }
+.vertical-80 { @apply h-80; }
+.vertical-96 { @apply h-96; }
+
