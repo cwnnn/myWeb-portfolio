@@ -46,6 +46,7 @@
     <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
     <RcsResponsiveSlider :items="items" link="./HomeView.vue" />
   </section>
+  <RcsSpacer size="44" />
   <section class="skills-section mt-16 px-6">
     <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
     <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12">
@@ -61,11 +62,13 @@
       <RcsProficiencyBar skill="Unity" :level="30" />
     </div>
   </section>
+  <RcsSpacer size="44" />
 </template>
 
 <script setup>
 import RcsProficiencyBar from '@/components/RcsProficiencyBar/RcsProficiencyBar.vue';
 import RcsResponsiveSlider from "@/components/RcsResponsiveSlider/RcsResponsiveSlider.vue";
+import RcsSpacer from '@/components/RcsSpacer/RcsSpacer.vue';
 
 const items = [
   { 
