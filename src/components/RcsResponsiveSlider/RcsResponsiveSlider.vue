@@ -1,5 +1,10 @@
 <template>
-  <div class="rcs-slider">
+  <div
+    class="rcs-slider"
+    :id="props.id"
+    :class="['rcs-slider', props.class]"
+    :style="props.style"
+  >
     <!-- Slides (Stacked & Offset) -->
     <div class="rcs-slider--slides">
       <div
@@ -49,15 +54,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue"
+import type { BaseProps } from '../BaseProps'
+import type { RcsResponsiveSliderProps } from './RcsResponsiveSliderinterface'
 
-const props = defineProps({
-  items: {
-    type: Array,
-    required: true
-  }
-})
+const props = defineProps<{
+  items: RcsResponsiveSliderProps[]
+} & BaseProps>()
 
 const activeIndex = ref(0)
 
@@ -70,18 +74,18 @@ const prevSlide = () => {
     (activeIndex.value - 1 + props.items.length) % props.items.length
 }
 
-const goToSlide = (i) => {
+const goToSlide = (i: number) => {
   activeIndex.value = i
 }
 
 // Döngüsel index hesaplama
-const getIndex = (offset) => {
+const getIndex = (offset: number) => {
   const len = props.items.length
   return (activeIndex.value + offset + len) % len
 }
 
 // Kartların pozisyonunu ve stilini ayarlayan fonksiyon
-const getCardStyle = (offset) => {
+const getCardStyle = (offset: number) => {
   // offset: -2, -1, 0, 1, 2
   const zIndexes = [2, 5, 10, 5, 2]
   const opacities = [0.5, 0.7, 1, 0.7, 0.5]
@@ -98,7 +102,7 @@ const getCardStyle = (offset) => {
 }
 
 // Otomatik kaydırma için interval
-let intervalId = null
+let intervalId: ReturnType<typeof setInterval> | null = null
 
 onMounted(() => {
   intervalId = setInterval(() => {
@@ -107,7 +111,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  clearInterval(intervalId)
+  if (intervalId) clearInterval(intervalId)
 })
 </script>
 
