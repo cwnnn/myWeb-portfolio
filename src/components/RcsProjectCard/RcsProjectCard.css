@@ -1,0 +1,35 @@
+@reference "tailwindcss/theme.css";
+
+.project-card {
+  @apply relative cursor-pointer rounded-xl overflow-hidden transition-transform duration-300 transform bg-gray-800 text-white shadow shadow-white;
+}
+
+.project-card:hover {
+  @apply scale-105 ring-2 ring-indigo-400 shadow-[0_0_4px_rgba(240,0,255),0_0_10px_rgba(240,0,255),0_0_16px_rgba(240,0,255)] shadow-fuchsia-500;
+}
+
+.project-card-image {
+  @apply w-full h-64 object-cover;
+}
+
+/* Hover ve gradient overlay */
+.project-card-gradient-overlay {
+  @apply absolute inset-0 pointer-events-none;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+
+.project-card-hover-content {
+  @apply absolute inset-0 flex flex-col justify-end p-4 bg-black/60 transition-opacity duration-300 text-center;
+}
+
+.project-card-static-content {
+  @apply absolute bottom-4 left-4;
+}
+
+.project-card-title {
+  @apply text-xl font-bold mb-1 text-white;
+}
+
+.project-card-description {
+  @apply text-gray-200;
+}

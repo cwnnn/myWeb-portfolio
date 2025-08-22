@@ -13,7 +13,7 @@
 }
 
 .rcs-slider--card {
-  @apply relative rounded-xl shadow-lg w-80 h-60 overflow-hidden flex flex-col justify-end ring-2 ring-indigo-400/70  shadow-fuchsia-500
+  @apply relative rounded-xl w-80 h-60 overflow-hidden flex flex-col justify-end ring-2 ring-indigo-400/70 shadow-[0_0_4px_rgba(240,0,255),0_0_8px_rgba(240,0,255),0_0_12px_rgba(240,0,255)] shadow-fuchsia-500 hover:scale-105 transition-transform duration-300 bg-white text-gray-800;
 }
 
 .rcs-slider--img {
@@ -28,7 +28,7 @@
 }
 
 .rcs-slider--title {
-  @apply text-xl font-bold truncate;
+  @apply text-xl font-bold truncate text-gray-700;
 }
 
 .rcs-slider--desc {
