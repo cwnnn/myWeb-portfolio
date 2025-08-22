@@ -24,7 +24,7 @@
           />
           <div class="rcs-slider--info">
             <h2 class="rcs-slider--title">{{ items[getIndex(n - 3)].title }}</h2>
-            <p class="rcs-slider--desc">{{ items[getIndex(n - 3)].desc }}</p>
+            <p class="rcs-slider--desc">{{ items[getIndex(n - 3)].shortDesc }}</p>
             <p v-if="items[getIndex(n - 3)].meta" class="rcs-slider--meta">{{ items[getIndex(n - 3)].meta }}</p>
           </div>
         </router-link>
