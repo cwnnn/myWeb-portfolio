@@ -5,7 +5,6 @@
     :class="['rcs-slider', props.class]"
     :style="props.style"
   >
-    <!-- Slides (Stacked & Offset) -->
     <div class="rcs-slider--slides">
       <div
         v-for="n in 5"
@@ -14,7 +13,7 @@
         :style="getCardStyle(n - 3)"
       >
         <router-link
-          :to="items[getIndex(n - 3)].link"
+          :to="`projects/`+items[getIndex(n - 3)].to"
           class="rcs-slider--card"
         >
           <img
@@ -31,7 +30,6 @@
       </div>
     </div>
 
-    <!-- Controls -->
     <div class="rcs-slider--controls">
       <button 
         @click="prevSlide" 
@@ -78,13 +76,11 @@ const goToSlide = (i: number) => {
   activeIndex.value = i
 }
 
-// Döngüsel index hesaplama
 const getIndex = (offset: number) => {
   const len = props.items.length
   return (activeIndex.value + offset + len) % len
 }
 
-// Kartların pozisyonunu ve stilini ayarlayan fonksiyon
 const getCardStyle = (offset: number) => {
   // offset: -2, -1, 0, 1, 2
   const zIndexes = [2, 5, 10, 5, 2]
@@ -101,7 +97,6 @@ const getCardStyle = (offset: number) => {
   }
 }
 
-// Otomatik kaydırma için interval
 let intervalId: ReturnType<typeof setInterval> | null = null
 
 onMounted(() => {
