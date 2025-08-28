@@ -32,7 +32,7 @@
             <a href="https://www.instagram.com/resulcwn/#" class="icon-link" target="_blank">
               <i class="fa-brands fa-instagram contact-icon"></i>
             </a>
-           </div>
+          </div>
         </div>
       </div>
       <img
@@ -44,22 +44,18 @@
   </section>
   <section class="mt-16 px-6">
     <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
+         <div class="project-counter-wrapper">    
+        <p class="project-counter">{{ projects.length }}+</p>
+        <p class="project-counter-label">Tamamlanan projeler</p>
+      </div>
+      
     <RcsResponsiveSlider :items="projects" link="./HomeView.vue" />
   </section>
   <RcsSpacer size="44" />
   <section class="skills-section mt-16 px-6">
     <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
-    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12">
-      <RcsProficiencyBar skill="C#" :level="85" />
-      <RcsProficiencyBar skill="Vue.js" :level="60" />
-      <RcsProficiencyBar skill="Python" :level="60" />
-      <RcsProficiencyBar skill="Git" :level="85" />
-      <RcsProficiencyBar skill="JavaScript" :level="50" />
-      <RcsProficiencyBar skill="Node.js" :level="40" />
-      <RcsProficiencyBar skill="TypeScript" :level="37" />  
-      <RcsProficiencyBar skill="SQL" :level="75" /> 
-      <RcsProficiencyBar skill="PHP" :level="40" />
-      <RcsProficiencyBar skill="Unity" :level="30" />
+   <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12">
+     <RcsProficiencyBar v-for="item in skills" :key="item.skill" :skill="item.skill" :level="item.level" />
     </div>
   </section>
   <RcsSpacer size="44" />
@@ -71,6 +67,7 @@ import RcsResponsiveSlider from "@/components/RcsResponsiveSlider/RcsResponsiveS
 import RcsSpacer from '@/components/RcsSpacer/RcsSpacer.vue';
 
 import { projects } from '@/data/projects';
+import { skills } from '@/data/AboutMe';
 
 </script>
 
@@ -128,6 +125,18 @@ import { projects } from '@/data/projects';
 .icon-link:hover {
   @apply text-indigo-400;
   filter: drop-shadow(0 0 8px #818cf8);
+}
+
+.project-counter-wrapper {
+  @apply flex justify-center items-center gap-4 mb-0 flex flex-col;
+}
+
+.project-counter {
+  @apply text-2xl max-w-xl  border-b-2 border-indigo-400;
+}
+
+.project-counter-label {
+  @apply text-gray-300 max-w-xl  ;
 }
 
 </style>

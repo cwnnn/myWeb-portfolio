@@ -5,5 +5,5 @@ export interface RcsResponsiveSliderProps extends BaseProps {
   title: string
   shortDesc: string
   meta?: string
-  link: string
+  to: string
 }

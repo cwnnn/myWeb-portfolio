@@ -7,8 +7,7 @@
     <nav :class="['nav-links']">
       <router-link to="/" class="nav-link" exact-active-class="active">Home</router-link>
       <router-link to="/projects" class="nav-link" active-class="active">Projects</router-link>
-      <router-link to="/w" class="nav-link" active-class="active">About Me</router-link>
-      <router-link to="/e" class="nav-link" active-class="active">Contact</router-link>
+      <router-link to="/aboutme" class="nav-link" active-class="active">About Me</router-link>
     </nav>
 
    <button class="menu-toggle-button " @click="isOpen = !isOpen">☰</button>
@@ -16,7 +15,6 @@
       <li><router-link to="/" class="nav-link" exact-active-class="active" @click="isOpen = false">Home</router-link></li>
       <li><router-link to="/projects" class="nav-link" active-class="active" @click="isOpen = false">Projects</router-link></li>
       <li><router-link to="/w" class="nav-link" active-class="active" @click="isOpen = false">About Me</router-link></li>
-      <li><router-link to="/e" class="nav-link" active-class="active" @click="isOpen = false">Contact</router-link></li>
     </ul>
   </header>
 </template>
