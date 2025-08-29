@@ -1,7 +1,8 @@
 <template>
   <div v-if="project" class="max-w-4xl mx-auto px-6 py-18">
     
-    <h1 class="text-4xl font-bold mb-6 text-center">{{ project.title }}</h1>
+    <h1 class="text-4xl font-bold mb-3 text-center">{{ project.title }}</h1>
+    <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto"></div>
 
     <p class="text-lg mb-2 text-center">{{ project.shortDesc }}</p>
 
@@ -43,9 +44,7 @@
     <RcsSpacer size="20" />
 
    <iframe  v-if="project.youtube"
-    class="rounded-xl"
-    width="848" 
-    height="500" 
+    class="rounded-xl w-full h-64 md:h-96"
     :src="project.youtube" 
     title="YouTube video player" 
     frameborder="0" 
@@ -57,8 +56,9 @@
 
   </div>
 
-  <div v-else class="text-center py-12">
+  <div v-else class="text-center py-32">
     <p class="text-lg">Project not found.</p>
+    <router-link to="/projects" class="text-indigo-400 hover:underline">Back to Projects</router-link>
   </div>
 </template>
 

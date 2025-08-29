@@ -1,11 +1,12 @@
 <template>
   <div
-    :id="id"
+    :id="props.id"
     class="project-card"
     @click="goToDetail"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
-    :style="style"
+    :style="props.style"
+    :class="props.class"
   >
     <img
       v-if="props.img"

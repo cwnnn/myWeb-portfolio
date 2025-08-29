@@ -30,14 +30,14 @@
 
     <button
       @click="prevSlide"
-      class="absolute -left-10 top-1/2 -translate-y-1/2 text-white text-4xl rounded-full p-2 hover:bg-white hover:text-black z-10 transition-colors"
+      class="absolute -left-8 top-1/2 -translate-y-1/2 text-white text-4xl rounded-full p-2 hover:bg-white hover:text-black z-10 transition-colors"
     >
       <i class="fas fa-chevron-left"></i>
     </button>
 
     <button
       @click="nextSlide"
-      class="absolute -right-10 top-1/2 -translate-y-1/2 text-white text-4xl rounded-full p-2 hover:bg-white hover:text-black z-10 transition-colors"
+      class="absolute -right-8 top-1/2 -translate-y-1/2 text-white text-4xl rounded-full p-2 hover:bg-white hover:text-black z-10 transition-colors"
     >
       <i class="fas fa-chevron-right"></i>
     </button>
