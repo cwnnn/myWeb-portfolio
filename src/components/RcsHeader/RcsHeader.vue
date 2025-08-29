@@ -14,7 +14,7 @@
     <ul v-if="isOpen" class="md:hidden">
       <li><router-link to="/" class="nav-link" exact-active-class="active" @click="isOpen = false">Home</router-link></li>
       <li><router-link to="/projects" class="nav-link" active-class="active" @click="isOpen = false">Projects</router-link></li>
-      <li><router-link to="/aboutme" class="nav-link" active-class="active" @click="isOpen = false">About Me</router-link></li>
+      <li><router-link to="/w" class="nav-link" active-class="active" @click="isOpen = false">About Me</router-link></li>
     </ul>
   </header>
 </template>
