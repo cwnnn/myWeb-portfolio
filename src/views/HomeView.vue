@@ -10,7 +10,7 @@
         </h1>
 
         <p class="home-subtitle">
-          Hi, I’m Can. I am a junior developer who is still learning and improving every day. 
+          I am a junior developer who is still learning and improving every day. 
           I really enjoy working with new technologies, even if I sometimes feel a little shy to show my skills. 
           Even though I try not to rely too much on AI, I still use it in a way that doesn’t stop me from learning because I don’t want to miss out on new developments.
         </p>
