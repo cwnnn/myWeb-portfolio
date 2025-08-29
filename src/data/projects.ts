@@ -6,7 +6,7 @@ export const projects = [
     desc:"This was a school project I built with a friend. The video still shows a few bugs we later fixed, but we didn’t re-record a new demo. It was also my first time using GitHub. Making a game was a blast—we used Unity, and all the assets are my own drawings. Along the way I learned a lot about physics, animation state transitions, bullet mechanics, enemy spawning, and testing/balancing.",
     TechnologiesUsed: "Unity, C# and animation programs",
     github: "https://github.com/cwnnn/Toxicity",
-    demo: "https://www.linkedin.com/in/resulcan",
+    demo: "",
     to: "toxicity-game",
     img2: "/assets/projects/1-2.png",
     img3: "/assets/projects/1-3.png",

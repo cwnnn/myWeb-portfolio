@@ -3,7 +3,7 @@
     <div class="footer-container">
       <div class="footer-info">
         <h2 class="footer-title">Can's Portfolio</h2>
-        <p class="footer-subtitle">Frontend Developer & Game Enthusiast</p>
+        <p class="footer-subtitle">Software Developer</p>
         <p class="footer-subtitle">
           resulcwn@gmail.com</p>
       </div>
