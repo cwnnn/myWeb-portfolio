@@ -3,24 +3,27 @@
     <div class="home-content">
       <div class="text-content">
         <h1 class="home-title">
-          Hi, I'm <span class="highlight">Can</span>
+          Hi, I'm 
+          <span class="bg-gradient-to-r from-indigo-400 to-fuchsia-500 bg-clip-text text-transparent">
+            Resul Can
+          </span>
         </h1>
 
         <p class="home-subtitle">
-          Hi, I'm Can — a passionate developer, designer, and technology enthusiast.  
-          I love crafting seamless digital experiences and building innovative projects that solve real problems.  
-          Constantly learning and experimenting with new tools and frameworks to stay ahead in the fast-evolving tech world.
+          Hi, I’m Can. I am a junior developer who is still learning and improving every day. 
+          I really enjoy working with new technologies, even if I sometimes feel a little shy to show my skills. 
+          Even though I try not to rely too much on AI, I still use it in a way that doesn’t stop me from learning because I don’t want to miss out on new developments.
         </p>
 
         <p class="home-subtitle">
-          When I'm not coding, I enjoy exploring design trends, enhancing user interfaces, and sharing my knowledge with the community.  
-          My mission is to create intuitive and efficient applications that make a difference.
+           I am looking for new opportunities where I can grow and gain experience. I may not know everything yet, but I am motivated, open to feedback, and always ready to learn. 
+           I believe that with patience and practice, I can become better step by step and contribute to a team with my effort and positivity.
         </p>
         
         <div class="home-buttons">
           <router-link to="/projects" class="btn-primary">My Projects</router-link>
           <div class=" flex gap-4 items-center">
-             <a href="https://www.linkedin.com/in/resulcan" class="icon-link"  target="_blank">
+            <a href="https://www.linkedin.com/in/resulcan" class="icon-link"  target="_blank">
               <i class="fa-brands fa-linkedin-in contact-icon"></i>
             </a>
             <a href="https://github.com/cwnnn" class="icon-link" target="_blank">
@@ -35,30 +38,40 @@
           </div>
         </div>
       </div>
-      <img
-        src="@/assets/profile.gif"
-        alt="Profile Picture"
-        class="profile-image"
-      />
+      <div class="relative group">
+        <div class="profile-image">
+          <img 
+            src="../assets/myProfile.jpeg"
+            alt="Profile Picture" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
     </div>
   </section>
   <section class="mt-16 px-6">
-    <h2 class="text-3xl font-bold mb-8 text-center">My Projects</h2>
-         <div class="project-counter-wrapper">    
+    <h2 class="text-3xl font-bold mb-2 text-center">My Projects</h2> 
+    <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto"></div>
+      <div class="project-counter-wrapper">    
         <p class="project-counter">{{ projects.length }}+</p>
         <p class="project-counter-label">Tamamlanan projeler</p>
       </div>
       
     <RcsResponsiveSlider :items="projects" link="./HomeView.vue" />
   </section>
+
   <RcsSpacer size="44" />
+
   <section class="skills-section mt-16 px-6">
-    <h2 class="text-3xl font-bold mb-8 text-center">My Skills</h2>
+    <h2 class="text-3xl font-bold mb-2 text-center">My Skills</h2>
+    <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto"></div>
    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12">
      <RcsProficiencyBar v-for="item in skills" :key="item.skill" :skill="item.skill" :level="item.level" />
     </div>
   </section>
+
   <RcsSpacer size="44" />
+
 </template>
 
 <script setup>
@@ -99,15 +112,15 @@ import { skills } from '@/data/AboutMe';
 }
 
 .home-buttons {
-  @apply flex gap-4 flex-wrap justify-center md:justify-start;
+  @apply flex gap-4 flex-wrap justify-center md:justify-start ;
 }
 
 .profile-image {
-  @apply w-40 h-40 md:w-56 md:h-56 rounded-full object-cover shadow-lg flex-shrink-0;
+  @apply w-72 h-72 rounded-full overflow-hidden border-4 border-indigo-400/30 shadow-2xl transition-transform duration-300 group-hover:scale-105;
 }
 
 .btn-primary {
-  @apply px-6 py-3 bg-indigo-500 hover:bg-indigo-600 rounded-full transition;
+  @apply px-6 py-3 bg-indigo-500 hover:bg-indigo-600 rounded-full transition hover:scale-105;
 }
 
 .btn-secondary {
