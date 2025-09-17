@@ -1,17 +1,17 @@
 <template>
-  <div v-if="project" class="max-w-4xl mx-auto px-6 py-18">
+  <div v-if="project" class="max-w-4xl mx-auto px-6 py-18" >
     
-    <h1 class="text-4xl font-bold mb-3 text-center">{{ project.title }}</h1>
-    <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto"></div>
+    <h1 class="text-4xl font-bold mb-3 text-center" v-motion-slide-visible-once-top :duration="1200"  >{{ project.title }}</h1>
+    <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto" v-motion-slide-visible-once-top :duration="1200"></div>
 
-    <p class="text-lg mb-2 text-center">{{ project.shortDesc }}</p>
+    <p class="text-lg mb-2 text-center" v-motion-fade-visible-once :delay="400" :duration="1200">{{ project.shortDesc }}</p>
 
-    <p class="text-lg mb-8 text-center">{{ project.desc }}</p>
+    <p class="text-lg mb-8 text-center" v-motion-fade-visible-once :delay="600" :duration="1200">{{ project.desc }}</p>
 
-    <p v-if="project.TechnologiesUsed" class="text-lg mb-8 text-center"><a class="font-5bold">Technologies used: </a>{{ project.TechnologiesUsed }}</p>
+    <p v-if="project.TechnologiesUsed" class="text-lg mb-8 text-center" v-motion-fade-visible-once :delay="800" :duration="1200"><a class="font-5bold">Technologies used: </a>{{ project.TechnologiesUsed }}</p>
 
-    <div class="flex justify-center gap-6">
-      <a 
+    <div class="flex justify-center gap-6" v-motion-fade-visible-once :delay="1000" :duration="1200">
+      <a
         v-if="project.github" 
         :href="project.github" 
         target="_blank" 
@@ -31,7 +31,7 @@
 
     <RcsSpacer size="12" />
 
-    <div class="mb-8">
+    <div class="mb-8" v-motion-slide-visible-once-left :duration="1200">
       <RcsBasicSlider 
         :img="project.img" 
         :img2="project.img2" 
@@ -41,9 +41,10 @@
       />
     </div>
 
-    <RcsSpacer size="20" />
+    <RcsSpacer size="40" />
 
-   <iframe  v-if="project.youtube"
+   <iframe  v-if="project.youtube" 
+   v-motion-slide-visible-once-right :delay="1000" :duration="1200"
     class="rounded-xl w-full h-64 md:h-96"
     :src="project.youtube" 
     title="YouTube video player" 

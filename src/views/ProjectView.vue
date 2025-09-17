@@ -1,6 +1,6 @@
 <template>
-  <section class="project-section">
-    <div class="project-header">
+  <section class="project-section" >
+    <div class="project-header" v-motion-slide-visible-once-top :duration="1200">
       <h1 class="project-title">My Projects</h1>
       <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto"></div>
       <p class="project-intro">
@@ -8,10 +8,10 @@
         But now, I always use Git. Here are some of the projects I've worked on.
       </p>
 
-      <div class="project-counter-wrapper">    
+      <div class="project-counter-wrapper" v-motion-fade-visible-once :delay="1000" :duration="1200">    
         <p class="project-counter">{{ projects.length }}+</p>
       </div>
-      <p class="project-counter-label">Completed Projects</p>
+      <p class="project-counter-label" v-motion-fade-visible-once :delay="1200" :duration="1200">Completed Projects</p>
     </div>
   </section>
   
@@ -28,6 +28,8 @@
         :title="project.title"
         :shortDesc="project.shortDesc"
         :img="project.img"
+
+        v-motion-fade-visible-once :delay="200" :duration="1200"
       />
     </div>
   </section>
