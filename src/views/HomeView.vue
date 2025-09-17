@@ -1,7 +1,7 @@
 <template>
   <section class="home-section">
     <div class="home-content">
-      <div class="text-content">
+      <div class="text-content" v-motion-slide-visible-once-left :duration="1200">
         <h1 class="home-title">
           Hi, I'm 
           <span class="bg-gradient-to-r from-indigo-400 to-fuchsia-500 bg-clip-text text-transparent">
@@ -23,23 +23,23 @@
         <div class="home-buttons">
           <router-link to="/projects" class="btn-primary">My Projects</router-link>
           <div class=" flex gap-4 items-center">
-            <a href="https://www.linkedin.com/in/resulcan" class="icon-link"  target="_blank">
+            <a href="https://www.linkedin.com/in/resulcan" class="icon-link"  target="_blank" v-motion-roll-visible-left :duration="500" :delay="200">
               <i class="fa-brands fa-linkedin-in contact-icon"></i>
             </a>
-            <a href="https://github.com/cwnnn" class="icon-link" target="_blank">
+            <a href="https://github.com/cwnnn" class="icon-link" target="_blank" v-motion-roll-visible-left :duration="500" :delay="400">
               <i class="fa-brands fa-github contact-icon"></i>
             </a>
-            <a href="mailto:resulcwn@gmail.com" class="icon-link"  target="_blank">
+            <a href="mailto:resulcwn@gmail.com" class="icon-link"  target="_blank" v-motion-roll-visible-left :duration="500" :delay="600">
               <i class="fa-regular fa-envelope contact-icon"></i>
             </a>
-            <a href="https://www.instagram.com/resulcwn/#" class="icon-link" target="_blank">
+            <a href="https://www.instagram.com/resulcwn/#" class="icon-link" target="_blank" v-motion-roll-visible-left :duration="500" :delay="800">
               <i class="fa-brands fa-instagram contact-icon"></i>
             </a>
           </div>
         </div>
       </div>
-      <div class="relative group">
-        <div class="profile-image">
+      <div class="relative group" v-motion-slide-visible-once-right :duration="1200">
+        <div class="profile-image" >
           <img 
             src="../assets/myProfile.jpeg"
             alt="Profile Picture" 
@@ -49,24 +49,24 @@
       </div>
     </div>
   </section>
-  <section class="mt-16 px-6">
+  <section class="mt-16 px-6" v-motion-slide-visible-once-bottom :duration="1200">
     <h2 class="text-3xl font-bold mb-2 text-center">My Projects</h2> 
-    <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto"></div>
+    <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto" ></div>
       <div class="project-counter-wrapper">    
         <p class="project-counter">{{ projects.length }}+</p>
-        <p class="project-counter-label">Tamamlanan projeler</p>
+        <p class="project-counter-label">Completed Projects</p>
       </div>
       
     <RcsResponsiveSlider :items="projects" link="./HomeView.vue" />
   </section>
 
   <RcsSpacer size="44" />
-
-  <section class="skills-section mt-16 px-6">
-    <h2 class="text-3xl font-bold mb-2 text-center">My Skills</h2>
+  
+  <section class="skills-section mt-16 px-6" >
+    <h2 class="text-3xl font-bold mb-2 text-center" v-motion-slide-visible-once-top :delay="300" :duration="1200">My Skills</h2>
     <div class="w-20 h-1 mb-6 bg-gradient-to-r from-indigo-400 to-fuchsia-500 mx-auto"></div>
    <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12">
-     <RcsProficiencyBar v-for="item in skills" :key="item.skill" :skill="item.skill" :level="item.level" />
+     <RcsProficiencyBar v-for="item in skills" :key="item.skill" :skill="item.skill" :level="item.level" v-motion-fade-visible-once :delay="400" :duration="1000"/>
     </div>
   </section>
 

@@ -1,12 +1,12 @@
 <template>
   <div class="min-h-screen text-white">
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" >
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16" >
           <!-- Profile Image -->
-          <div class="relative group">
-            <div class="hero-profile-image">
+          <div class="relative group" v-motion-slide-visible-once-left :duration="1200">
+            <div class="hero-profile-image" >
               <img 
                 src="../assets/myProfile.jpeg"
                 alt="Profile Picture" 
@@ -16,15 +16,15 @@
           </div>
 
           <!-- Hero Text -->
-          <div class="hero-text">
+          <div class="hero-text" v-motion-slide-visible-once-right :duration="1200">
             <div class="mb-4">
               <span class="text-gray-400 text-lg font-medium">Hi, I'm</span>
-              <h1 class="hero-name">
+              <h1 class="hero-name" v-motion-fade-visible-once :duration="1200">
                 Resul Can Şık
               </h1>
             </div>
-            <p class="hero-title">Full Stack Developer</p>
-            <div class="hero-availability">
+            <p class="hero-title" v-motion-fade-visible-once :delay="300" :duration="1200">Full Stack Developer</p>
+            <div class="hero-availability" v-motion-fade-visible-once :delay="600" :duration="1200">
               <div class="hero-availability-dot"></div>
               Available for new projects
             </div>
@@ -36,14 +36,14 @@
     <!-- About Me Personal Info -->
     <section class="about-section">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12" v-motion-fade-visible-once :delay="400" :duration="1200">
           <h2 class="about-title">Who Am I?</h2>
           <div class="about-divider"></div>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-12">
           <!-- Personal Info -->
-          <div class="personal-info">
+          <div class="personal-info" v-motion-slide-visible-once-left :delay="600" :duration="1200">
             <div class="personal-info-header">
               <h3 class="personal-info-title">Personal Information</h3>
               <div class="space-y-3 text-gray-300">
@@ -64,7 +64,7 @@
           </div>
 
           <!-- Stats -->
-          <div class="stats-grid">
+          <div class="stats-grid" v-motion-slide-visible-once-left :delay="600" :duration="1200">
             <div 
               v-for="stat in stats" 
               :key="stat.label"
@@ -77,7 +77,7 @@
           <RcsSpacer size="" />
         </div>
 
-        <div class="personal-info-header border-fuchsia-500">
+        <div class="personal-info-header border-fuchsia-500" v-motion-slide-visible-once-left :delay="1000" :duration="1200">
           <h3 class="personal-info-title">About Me</h3>
           <p class="text-gray-300 leading-relaxed">{{ aboutDescription }}</p>
         </div>
@@ -87,12 +87,12 @@
     <!-- Hobbies & Interests -->
     <section class="about-section">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="about-title">Hobbies & Interests</h2>
+        <div class="text-center mb-12" v-motion-fade-visible-once :delay="100" :duration="1200">
+          <h2 class="about-title" >Hobbies & Interests</h2>
           <div class="about-divider"></div>
         </div>
 
-        <div class="hobbies-grid">
+        <div class="hobbies-grid" v-motion-fade-visible-once :delay="400" :duration="1200">
           <div 
             v-for="hobby in hobbies" 
             :key="hobby.title"
@@ -109,12 +109,12 @@
     <!-- Skills Section -->
     <section class="skills-section">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="about-title">My Skills</h2>
+        <div class="text-center mb-12" v-motion-fade-visible-once :delay="100" :duration="1200">
+          <h2 class="about-title" >My Skills</h2>
           <div class="about-divider"></div>
         </div>
 
-        <div class="px-4 sm:px-6 md:px-32">
+        <div class="px-4 sm:px-6 md:px-32" v-motion-fade-visible-once :delay="400" :duration="1200">
           <div class="skills-card">
             <div class="flex flex-wrap gap-2 justify-center">
               <span 
@@ -134,16 +134,16 @@
     <!-- Experience Timeline -->
     <section class="about-section">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="about-title">My Experience</h2>
+        <div class="text-center mb-12" v-motion-fade-visible-once :delay="100" :duration="1200">
+          <h2 class="about-title" >My Experience</h2>
           <div class="about-divider"></div>
         </div>
 
         <div class="timeline-container">
-          <div class="timeline-line"></div>
+          <div class="timeline-line" v-motion-fade-visible-once :delay="800" :duration="1000"></div>
           
           <div class="space-y-8">
-            <div 
+            <div v-motion-fade-visible-once :delay="400" :duration="1000"
               v-for="(exp, index) in experience" 
               :key="index"
               class="timeline-item"
@@ -189,7 +189,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="about-section">
+    <section class="about-section" v-motion-slide-visible-once-bottom :delay="100" :duration="1200">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="contact-card">
           <h2 class="contact-title">Contact Me!</h2>
