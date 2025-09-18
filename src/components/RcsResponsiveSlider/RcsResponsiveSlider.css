@@ -2,10 +2,11 @@
 
 .rcs-slider {
   @apply w-full flex flex-col items-center;
+  overflow-x: hidden;
 }
 
 .rcs-slider--slides {
-  @apply relative w-80 h-96 flex items-center justify-center;
+  @apply relative w-80 h-96 flex items-center justify-center ;
 }
 
 .rcs-slider--card-wrapper {
@@ -57,3 +58,4 @@
 .rcs-slider--dot-active {
   @apply bg-indigo-400;
 }
+

@@ -86,14 +86,16 @@ const getCardStyle = (offset: number) => {
   const zIndexes = [2, 5, 10, 5, 2]
   const opacities = [0.5, 0.7, 1, 0.7, 0.5]
   const scales = [0.88, 0.94, 1, 0.94, 0.88]
-  const translates = [-560, -280, 0, 280, 560] // px
+  const translates = ['-140%', '-70%', '0%', '70%', '140%']
+
 
   const idx = offset + 2 // -2 => 0, -1 => 1, 0 => 2, 1 => 3, 2 => 4
 
   return {
     zIndex: zIndexes[idx],
     opacity: opacities[idx],
-    transform: `scale(${scales[idx]}) translateX(${translates[idx]}px)`
+    transform: `scale(${scales[idx]}) translateX(${translates[idx]})`
+
   }
 }
 
