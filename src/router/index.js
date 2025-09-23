@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProjectView from '../views/ProjectView.vue'
 import ProjectDetailView from '@/views/ProjectDetailView.vue'
+import aboutMeView from '../views/aboutMeView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,12 +26,12 @@ const router = createRouter({
     {
       path: '/aboutme',
       name: 'aboutme',
-      component: () => import('../views/aboutMeView.vue'),
+      component: aboutMeView,
     },
     {
       path: '/:pathMatch(.*)*',
       name: 'notfound',
-      component: () => import('../views/NotFoundView.vue'),
+      component: NotFoundView,
     }
   ],
 })
