@@ -48,5 +48,21 @@ export const projects = [
     TechnologiesUsed:"Vue.js, Node.js, tailwind CSS",
     github:"https://github.com/cwnnn/myWeb-portfolio",
     to: "my-web-portfolio",
+  },
+  {
+    img: "/assets/projects/5.png", 
+    title: "Work Tracker Web App", 
+    shortDesc: "A minimalist time-tracking app with focus statistics and charts.",
+    desc: `Work Tracker is a web-based time tracking app I developed to monitor daily study or work sessions. 
+    It allows users to create topics, start and stop session timers, and analyze their performance through 
+    interactive charts. The app requires no login — it uses anonymous Firebase authentication to store data securely. 
+    Users can view their daily and weekly activity on a dashboard with detailed graphs, track total focus time, 
+    and review session history. The main goal was to create a distraction-free, data-driven productivity tool.`,
+    TechnologiesUsed: "Vue 3, TypeScript, TailwindCSS, Firebase, Chart.js",
+    github: "https://github.com/cwnnn/work-tracker-web",
+     demo: "https://work-tracker-web.vercel.app",
+    to: "work-tracker-web",
+    img2:"/assets/projects/5-2.png"
+
   }
 ];
