@@ -5,9 +5,13 @@
   />
   <div class="flex flex-col min-h-screen">
     <RcsHeader />
+    <Snow />
 
     <!-- Overlay div -->
-    <div id="overlay" class="fixed inset-0 z-10 bg-black bg-opacity-90 pointer-events-none"></div>
+    <div
+      id="overlay"
+      class="fixed inset-0 z-10 bg-black bg-opacity-90 pointer-events-none"
+    ></div>
 
     <main class="flex-1 relative z-20 text-white">
       <router-view />
@@ -17,14 +21,15 @@
   </div>
 </template>
 
-<script setup>  
-import { onMounted } from 'vue';
-import RcsHeader from './components/RcsHeader/RcsHeader.vue';
-import RcsFooter from './components/RcsFooter/RcsFooter.vue';
+<script setup>
+import { onMounted } from "vue";
+import RcsHeader from "./components/RcsHeader/RcsHeader.vue";
+import RcsFooter from "./components/RcsFooter/RcsFooter.vue";
+import Snow from "./components/snow.vue";
 
 onMounted(() => {
-  const overlay = document.getElementById('overlay');
-  document.addEventListener('mousemove', (e) => {
+  const overlay = document.getElementById("overlay");
+  document.addEventListener("mousemove", (e) => {
     const x = e.clientX;
     const y = e.clientY;
     const mask = `radial-gradient(circle 120px at ${x}px ${y}px, transparent 0%, black 100%)`;
