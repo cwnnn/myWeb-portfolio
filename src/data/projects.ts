@@ -83,4 +83,15 @@ export const projects = [
     img5: "",
     youtube: "https://www.youtube.com/embed/THPKX2CLEK0",
   },
+  {
+    img: "/assets/projects/7.png",
+    title: "RY Coffee",
+    shortDesc: "Sample website for businesses",
+    desc: `Frontend-focused; hero, campaign slider, our story, Instagram, comments, contact, Google Maps example website.`,
+    TechnologiesUsed: "Vue 3, TypeScript, Vite, TailwindCSS, Naive UI",
+    github: "https://github.com/cwnnn/RY-Coffee",
+    demo: "https://ry-coffee.vercel.app/",
+    to: "ry-coffe",
+    img2: "/assets/projects/7-2.png",
+  },
 ];
