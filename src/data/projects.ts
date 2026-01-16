@@ -94,4 +94,16 @@ export const projects = [
     to: "ry-coffe",
     img2: "/assets/projects/7-2.png",
   },
+  {
+    img: "/assets/projects/8.png",
+    title: "Ai Note",
+    shortDesc: "AI-powered note-taking and list-making web",
+    desc: `The project includes an AI-supported tagging system, general note-taking operations, tag and title-based listing, archiving, and a trash bin.`,
+    TechnologiesUsed:
+      "Vue.js, TypeScript, Express.js, Pinia, TailwindCSS, Naive UI",
+    github: "https://github.com/cwnnn/ai-note",
+    youtube: "https://www.youtube.com/embed/feNPKVRTXLY",
+    to: "ai-note",
+    img2: "/assets/projects/8-2.png",
+  },
 ];
